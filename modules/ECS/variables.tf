@@ -40,3 +40,6 @@ variable "mysql_database" {
 variable "mysql_port" {
   type = number
 }
+variable "key_name"{
+    type = string
+}

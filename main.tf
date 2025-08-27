@@ -29,6 +29,7 @@ module "ecs" {
   mysql_database  = var.mysql_database
   secret_key_base = var.secret_key_base
   image_url       = var.image_url
+  key_name = var.key_name 
 }
 
 module "alb" {
@@ -48,4 +49,11 @@ module "RDS"{
   rds_subnet=module.vpc.private_subnet_ids
   security=module.securitygroup.ecs_security_group_id
 }
-
+module "S3"{
+  source = "./modules/S3"
+}
+module "codepipeline"{
+  source = "./modules/CodePipeline"
+  bucket = module.S3.artifact_bucket_name
+  build = module.codebuild.codebuild
+}

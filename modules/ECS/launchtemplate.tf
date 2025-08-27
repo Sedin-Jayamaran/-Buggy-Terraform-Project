@@ -24,7 +24,7 @@ resource "aws_launch_template" "jai-launch-template" {
     enabled = true
   }
 
-  key_name = "QQQQQQ"  
+  key_name = var.key_name  
 
   metadata_options {
     http_endpoint               = "enabled"
