@@ -18,7 +18,7 @@ resource "aws_launch_template" "jai-launch-template" {
     market_type = "spot"
   }
 
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
 
   monitoring {
     enabled = true
