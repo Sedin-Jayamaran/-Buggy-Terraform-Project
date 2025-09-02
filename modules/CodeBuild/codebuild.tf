@@ -8,7 +8,7 @@ resource "aws_codebuild_project" "terraform_build" {
 source {
     type            = "GITHUB"
     location        = "https://github.com/Sedin-Jayamaran/Code-Pipeline.git"
-    buildspec       = "buildspec.yml"
+    buildspec       = "Buggy-App/buildspec.yml"
     git_clone_depth = 1
   }
 
